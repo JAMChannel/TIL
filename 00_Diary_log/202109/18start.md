@@ -2,6 +2,7 @@
 
 > MENTA応募カリキュラム
 - Web技術学習
+- https://github.com/JAMChannel/TIL/blob/main/Web/web.md
 
 > Rails(ポートフォリオ)
 - いいね機能を非同期化（js）
