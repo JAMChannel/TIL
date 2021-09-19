@@ -20,7 +20,9 @@ Hypertext Transfer Protocol（ハイパーテキスト・トランスファー�
 HTTPリクエストは実際のwebブラウザからwebサーバに対して「このページ頂戴」とリクエスト（要求）されている状況になります。
 
 以下の画像を確認してみましょう
-https://gyazo.com/dae8d8d7a3d2e13bc7f2f403c6aa3c14
+
+
+ ![](https://gyazo.com/dae8d8d7a3d2e13bc7f2f403c6aa3c14/raw)
 
 私は今回「https://www.google.com/」の情報を頂戴とリクエストしました。
 ネットワークタブをみてみるとGETにてリクエストされているのが確認取れますね！！
@@ -39,6 +41,8 @@ accept-language: ja,en-US;q=0.9,en;q=0.8
 sec-fetch-mode: navigate
 
 }
+
+```
 
 ### リクエストヘッダー（メッセージヘッダー）
 
@@ -59,7 +63,7 @@ $ curl --http1.1 --get -v https://www.google.com/
 > User-Agent: curl/7.71.1
 > Accept: */*
 ///省略
-
+```
 
 
 
@@ -72,8 +76,10 @@ $ curl --http1.1 --get -v https://www.google.com/
  ## HTTPレスポンスとは？
  リクエストにてwebサーバより取得した情報をクライアント（ PCなど）へ送る返却作業を指します。
  
+ ![](https://gyazo.com/7fd4a05ef270308ba7a536aaa0c027c7/raw)
  
- https://gyazo.com/7fd4a05ef270308ba7a536aaa0c027c7
+ 
+
  
  その中でもレスポンスヘッダーは、 HTTP レスポンスで使用できる HTTP ヘッダーで、メッセージの内容には関連しないのが通例とされています。
  
@@ -81,9 +87,13 @@ $ curl --http1.1 --get -v https://www.google.com/
  
 リクエストで要求した欲しかった HTMLファイルの中身の場所になります。
 
+ ![](https://gyazo.com/6dc3118f308b0d2e7d6ab67267cf84fb/raw)
+
  
  
  それではレスポンスで受け取った内容を***ブラウザ***で表示できるはずですが、ブラウザとはなんでしょうか！！
+ 
+ 
  
  ## ブラウザとは？
  
@@ -150,7 +160,7 @@ PATCH メソッドは、リソースを部分的に変更するために使用�
 HTTP/1.1 200 OK
 ```
 
-こちらは通信状況を確認するのによく使うので暗記レベルでおぼえておく価値ありです。
+こちらは通信状況を確認するのによく使うので暗記レベルでおぼえておく価値ありです。（個人的にjsでよく確認します！！）
 
 HTTP ２００番台
 
