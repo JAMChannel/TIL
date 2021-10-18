@@ -1,0 +1,25 @@
+## 配列
+```
+# 配列の要素を操作する
+
+team = ["勇者", "魔法使い"]
+p team
+
+puts team[0]
+
+puts team.length
+
+team.push("戦士")
+p team
+
+team[2] = "ドラゴン"
+p team
+
+team[5] = "盗賊"
+p team
+
+###  削除方法
+team.delete_at(2)
+p team
+puts team.length
+```
