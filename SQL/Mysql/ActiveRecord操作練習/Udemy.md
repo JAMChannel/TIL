@@ -73,11 +73,91 @@ mysql> SELECT height,weight FROM members;
 Member.select(:height, :weight)
 ```
 
-#### 式を導入した場合
+
+
+## where文練習
+- SQL
 ```
-mysql> SELECT height/100 FROM members;
+mysql> SELECT name FROM members WHERE height >= 180;
++--------+
+| name   |
++--------+
+| 高橋   |
++--------+
+1 row in set (0.03 sec)
+```
+- クエリインターフェース
+
+```
+Member.where('height >= 180')
+
+?を入れる場合
+Member.where('height >= ?',180)
+
+nameカラムのみ取り出したい場合
+Member.where('height >= ?',180).select(:name)
+```
+?はプレースホルダーと呼ばれ、第二引数で指定した値が置き換えられます。
+sqlインジェクションに対するセキュリティ面を考慮することが可能
+
+ ## whereテスト
+身長が170センチ以上 かつ 体重が70キロ以下のnameを取得
+
+- SQL
+```
+mysql> SELECT name FROM members WHERE height >= 170 AND weight <= 70;
++--------+
+| name   |
++--------+
+| 佐藤   |
+| 伊藤   |
++--------+
+2 rows in set (0.01 sec)
 ```
 
+- クエリインターフェース
+```
+Member.where(['height >= 170 and weight <= 70']).select(:name)
+```
+
+身長が170センチ以上 もしくは 体重が70キロ以下のnameを取得
+- SQL
+```
+mysql> SELECT name FROM members WHERE height >= 170 OR weight <= 70;
++--------+
+| name   |
++--------+
+| 佐藤   |
+| 鈴木   |
+| 高橋   |
+| 渡辺   |
+| 伊藤   |
+| 山本   |
+| 中村   |
+| 加藤   |
++--------+
+8 rows in set (0.02 sec)
+```
+
+- クエリインターフェース
+```
+Member.where("height >= ? or weight <= ?", 180, 70).select(:name)
+```
+## count練習
+- SQL
+```
+mysql> SELECT COUNT(*) FROM members WHERE age >= 50;
++----------+
+| COUNT(*) |
++----------+
+|        4 |
++----------+
+1 row in set (0.00 sec)
+```
+- クエリインターフェース
+```
+Member.where('age >= 50').count
+```
 
 
 
