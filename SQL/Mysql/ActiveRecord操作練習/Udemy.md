@@ -159,6 +159,52 @@ mysql> SELECT COUNT(*) FROM members WHERE age >= 50;
 Member.where('age >= 50').count
 ```
 
+## ORDER BY 練習
+- SQL
+170以上のnameとageを年齢の高い順に取得
+```
+mysql> SELECT name,age FROM members WHERE height >= 170 ORDER BY age DESC;
++--------+-----+
+| name   | age |
++--------+-----+
+| 伊藤   |  75 |
+| 佐藤   |  60 |
+| 高橋   |  31 |
+| 加藤   |  26 |
++--------+-----+
+4 rows in set (0.00 sec)
+```
+
+- クエリインターフェース
+```
+.order("created_at DESC")
+```
+
+## GROUP BY 練習
+- SQL
+```
+mysql> SELECT job_id, COUNT(*) FROM members GROUP BY job_id;
++--------+----------+
+| job_id | COUNT(*) |
++--------+----------+
+|      1 |        1 |
+|      2 |        1 |
+|      3 |        2 |
+|      4 |        1 |
+|      5 |        1 |
+|      6 |        1 |
+|      7 |        2 |
+|      8 |        1 |
++--------+----------+
+8 rows in set (0.06 sec)
+```
+
+
+- クエリインターフェース
+ ```
+ Member.group(:job_id).count
+ ```
+
 
 
 
