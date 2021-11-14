@@ -204,9 +204,27 @@ mysql> SELECT job_id, COUNT(*) FROM members GROUP BY job_id;
  ```
  Member.group(:job_id).count
  ```
+## GROUP BY 練習
+#### GROUP BYで平均身長を割り出す
+mysql> SELECT job_id, AVG(height) FROM members GROUP BY job_id;
++--------+--------------------+
+| job_id | AVG(height)        |
++--------+--------------------+
+|      1 |                173 |
+|      2 |              151.5 |
+|      3 |  166.0999984741211 |
+|      4 |  170.1999969482422 |
+|      5 | 166.39999389648438 |
+|      6 | 178.60000610351562 |
+|      7 | 150.95000457763672 |
+|      8 | 182.10000610351562 |
++--------+--------------------+
+8 rows in set (0.02 sec)
 
-
-
+- クエリインターフェース
+ ```
+ Member.group(:job_id).average("height")
+ ```
 
 
 
