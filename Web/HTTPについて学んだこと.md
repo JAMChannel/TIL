@@ -1,5 +1,3 @@
-
-
 ## HTTPについて学んだことを自分の言葉で説明してください。
 
 ### そもそもHTTPって何？
@@ -60,62 +58,9 @@ $ curl --http1.1 --get -v https://www.google.com/
 ///省略
 ```
 
-
-
-### リクエストボディ（メッセージボディ）
-
- getの場合は補足で何か記載がある場合に記載する場所くらいの認識で良いかと思います。
- 
- それではリクエストがあるということは***レスポンス***も存在します。
- 
- ## HTTPレスポンスとは？
- リクエストにてwebサーバより取得した情報をクライアント（ PCなど）へ送る返却作業を指します。
- 
- ![](https://gyazo.com/7fd4a05ef270308ba7a536aaa0c027c7/raw)
- 
- 
-
- 
- その中でもレスポンスヘッダーは、 HTTP レスポンスで使用できる HTTP ヘッダーで、メッセージの内容には関連しないのが通例とされています。
- 
- ### HTTPレスポンスボディとは？
- 
-リクエストで要求した欲しかった HTMLファイルの中身の場所になります。
-
- ![](https://gyazo.com/6dc3118f308b0d2e7d6ab67267cf84fb/raw)
-
- 
- 
- それではレスポンスで受け取った内容を***ブラウザ***で表示できるはずですが、ブラウザとはなんでしょうか！！
- 
- 
- 
- ## ブラウザとは？
- 
- 簡単にいうとインターネットを閲覧するためのツールの一つです。
- 皆さんが利用している「Google Chrome（グーグルクローム）」「Safari（サファリ）」「Internet Explorer（インターネットエクスプローラー）」がそれに該当します。
- 
- #### Google Chrome
- Googleが提供しているブラウザアプリ。
- 開発環境の場ではよく利用されている印象
- 
-#### Firefox
-PCのブラウザで目にすることが多い。Mozilla Corporationが提供しています。
-ウェブ上での動きを追跡されるトラッキングの拒否、プライベートデータの消去などのプライバシー保護を考えた機能を搭載
-
-#### Safari
-SafariはiPhoneに標準でインストールされているブラウザアプリです。
-SafariはPCで設定されたデザイン描画に強く、ウェブページのデザインが他のブラウザよりも正確に表示されるといわれています。
-
-### サーバーとは
-
-サーバーは、画面の無いPCと覚えておくと良きです。
-アプリケーションはどこかのサーバーの中に保存されています。そこに通信することで、サービスが使えます。
-ネットワーク（インターネット）を通じてシステム利用しているコンピュータはサーバーは必須です。
-
-通信のやり取りに関しては説明しましたがここでHTTP通信に関して通信の種類が存在するので、通信方法の種類を紹介します。
-
 ### HTTPメソッドについて
+HTTPメソッドはいくつかの種類があり、それぞれが「特定のリソース」に
+対するアクションに対応しています。
 
 代表格はこちら
 ```
@@ -144,32 +89,3 @@ TRACE メソッドは、対象リソースへのパスに沿ってメッセー�
 PATCH
 PATCH メソッドは、リソースを部分的に変更するために使用します。
 ```
-
-
-
-## ステータスコードついて
-一番上のレスポンス行で表示される3桁の番号のことです。
-
-```
-例
-HTTP/1.1 200 OK
-```
-
-こちらは通信状況を確認するのによく使うので暗記レベルでおぼえておく価値ありです。（個人的にjsでよく確認します！！）
-
-HTTP ２００番台
-
-
-<table><tbody><tr><th>HTTPステータスコード</th><th>説明</th><th>状態</th></tr><tr><th><strong>200 OK</strong></th><td>リクエストが正常に処理できた</td><td>正常</td></tr><tr><th>201 Created</th><td>リクエストが成功してリソースの作成が完了</td><td>正常</td></tr><tr><th>202 Accepted</th><td>リクエストを受け取ったが処理はされていない</td><td>正常</td></tr><tr><th>203 Non-Authoritative Information</th><td>リクエストが成功したものの、変換プロキシによって<br>元のサーバーの200(OK)レスポンスからペイロードが変更された</td><td>正常</td></tr><tr><th>204 No Content</th><td>リクエストに対して送信するコンテンツは無いがヘッダは有用である</td><td>正常</td></tr><tr><th>205 Reset Content</th><td>クライアントにドキュメントビューをリセットするように指示</td><td>正常</td></tr><tr><th>206 Partial Content</th><td>要求された範囲のデータやリソースの一部分だけのリクエストが成功</td><td>正常</td></tr></tbody></table>
-
-HTTP300番台
-
-<table><tbody><tr><th>HTTPステータスコード</th><th>説明</th><th>状態</th></tr><tr><th><strong>300 Multiple Choice</strong></th><td>リクエストに対して複数のレスポンスがあることを示す</td><td>正常</td></tr><tr><th><strong>301 Moved Permanently</strong></th><td>恒久的に移動する</td><td>正常</td></tr><tr><th>302 Found</th><td>一時的に移動する<br>※ Google検索エンジンの検索リストでは旧URLを示すため<br>将来的に元のURLに戻すなどの時に利用します。</td><td>正常</td></tr><tr><th>304 Not Modified</th><td>更新されていない<br>※正常に処理されていますがブラウザキャッシュの内容を表示している為、<br>サーバからダウンロードをしていません。</td><td>正常</td></tr></tbody></table>
-
-
-HTTP400番台
-<table><tbody><tr><th>HTTPステータスコード</th><th>説明</th><th>状態</th></tr><tr><th>400 Bad Request</th><td>一般的なクライアントエラー</td><td>エラー</td></tr><tr><th>401 Unauthorized</th><td>アクセス権が無い、または認証に失敗</td><td>エラー</td></tr><tr><th>402 Payment Required</th><td>料金の支払いをするまでリクエストを処理できない状態</td><td>エラー</td></tr><tr><th><strong>403 Forbidden</strong></th><td>閲覧権限が無いファイルやフォルダ</td><td>エラー</td></tr><tr><th><strong>404 Not Found</strong></th><td>Webページが見つからない</td><td>エラー</td></tr><tr><th>405 Method Not Allowed</th><td>送信するクライアント側のメソッドが許可されていない</td><td>エラー</td></tr><tr><th>406 Not Acceptable</th><td>サーバ側が受付不可能な値（ファイルの種類など）であり提供できない状態</td><td>エラー</td></tr><tr><th>407 Proxy Authentication Required</th><td>プロキシサーバ経由で通信を行う際にプロキシサーバの認証情報が不足している</td><td>エラー</td></tr><tr><th>408 Request Timeout</th><td>リクエスト送信後のやり取りに時間が長すぎるため時間切れ</td><td>エラー</td></tr><tr><th>409 Conflict</th><td>サーバに既に存在しているデータが競合しているためリクエストを完了できない</td><td>エラー</td></tr><tr><th>410 Gone</th><td>ファイルが削除されたため、ほぼ永久的にWebページが存在しない</td><td>エラー</td></tr><tr><th>411 Length Required</th><td>Content-Lengthとはリクエストヘッダに送るデータ容量が書いてある項目<br>サーバの方でContent-Lengthヘッダが無いためアクセスを拒否した</td><td>エラー</td></tr><tr><th>412 Precondition Failed</th><td>ヘッダで定義された前提条件が満たされていない場合にアクセス拒否される</td><td>エラー</td></tr><tr><th>413 Payload Too Large</th><td>ファイルをアップロードする際にサーバで定めたファイル容量の<br>上限を超えてしまった為アクセス拒否された</td><td>エラー</td></tr><tr><th>414 URI Too Long</th><td>指定したURLが長すぎる</td><td>エラー</td></tr><tr><th>415 Unsupported Media Type</th><td>サーバで許可していないリクエストの種類の為アクセス拒否された</td><td>エラー</td></tr><tr><th>416 Range Not Satisfiable</th><td>サーバーがリクエストされた範囲（容量）を提供できない</td><td>エラー</td></tr><tr><th>417 Expectation Failed</th><td>サーバが拡張されたステータスコードを返すことが出来ない</td><td>エラー</td></tr><tr><th>422 Unprocessable Entity</th><td>WebDAVの拡張ステータスコード<br>リクエストは適正だが意味が異なるためサーバが返すことが出来ない</td><td>エラー</td></tr><tr><th>423 Locked</th><td>WebDAVの拡張ステータスコード<br>リクエスト内容がロックされているためサーバが返すことが出来ない</td><td>エラー</td></tr><tr><th>425 Too Early</th><td>サーバが繰り返し処理が発生される可能性のあるリクエストと判断したため<br>処理が出来ないと判断した<br>※ 無限ループでサーバに高負荷がかかるリスクの可能性がある為</td><td>エラー</td></tr><tr><th>426 Upgrade Required</th><td>Upgrading to TLS Within HTTP/1.1の拡張ステータスコード<br>HTTP/1.1にアップグレードが必要な為、サーバが処理できない</td><td>エラー</td></tr><tr><th>429 Too Many Requests</th><td>一定時間内にリクエスト数が多すぎるためアクセスを拒否した<br>※ DDos攻撃によるサーバダウンのリスクを回避する為</td><td>エラー</td></tr><tr><th>431 Request Header Fields Too Large</th><td>リクエストヘッダーが長すぎるためサーバ処理が拒否した</td><td>エラー</td></tr></tbody></table>
-
-HTTP500番台
-
-<table><tbody><tr><th>HTTPステータスコード</th><th>説明</th><th>状態</th></tr><tr><th>500 Internal Server Error</th><td>何らかのサーバ内で起きたエラー</td><td>エラー</td></tr><tr><th>501 Not Implemented</th><td>サーバーがリクエストに満たすのに必要な機能をサポートしていない</td><td>エラー</td></tr><tr><th>502 Bad Gateway</th><td>ゲートウェイ・プロキシサーバが不正なリクエストを受け取り拒否した</td><td>エラー</td></tr><tr><th>503 Service Unavailable</th><td>一時的にサーバにアクセスが出来ない</td><td>エラー</td></tr><tr><th>504 Gateway Timeout</th><td>リクエストを送ったサーバからの適切なレスポンスがなくタイムアウトした</td><td>エラー</td></tr><tr><th>505 HTTP Version Not Supported</th><td>HTTP バージョンがサーバによってサポートされていない</td><td>エラー</td></tr><tr><th>506 Variant Also Negotiates</th><td>Transparent Content Negotiation in HTTPで定義されている拡張ステータスコード<br>URLを返すコンテンツで配置ミスなどによる内部サーバエラー</td><td>エラー</td></tr><tr><th>507 Insufficient Storage</th><td>WebDAV拡張ステータスコード<br>サーバで処理するためのストレージ容量不足</td><td>エラー</td></tr><tr><th>508 Loop Detected</th><td>主に開発中のプログラム処理で、無限ループに陥ったためサーバーが操作を終了</td><td>エラー</td></tr><tr><th>510 Not Extended</th><td>主に静的ファイルへのアクセス集中による一時的に表示されるエラー</td><td>エラー</td></tr><tr><th>511 Network Authentication Required</th><td>ネットワーク認証が必要</td><td>エラー</td></tr></tbody></table>

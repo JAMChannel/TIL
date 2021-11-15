@@ -1,6 +1,6 @@
 # SQL書き順
 ```
-SELECT→FROM→WHERE→ORDER BY
+SELECT→FROM→WHERE→ORDER BY→HAGING→OREDER BY
 ```
 
 
@@ -73,4 +73,24 @@ SELECT job_id, name FROM members GROUP BY job_id;
 ```
 上記はエラーになる
 例えば、job_idが5の時「上田」「鈴木」があり表示する値が定めることができない為
+
+# HAVINGについて
+グループした値に関する条件式を付与できる
+
+## 書き方
+```
+SELECT カラム名 FROM テーブル名 GROUP BY 集約キー HAVING グループに対する条件式；
+```
+whereに関してはレコードによる条件式に対して
+HAVINGはグループに対して行う条件式
+
+# join区について
+２つのテーブルがリレーション（関係）している場合
+リレーショナルデータベースと呼ばれるがテーブルを
+結合する場合をjoinを用いることがある。
+
+## 書き方
+```
+SELECT カラム名 FROM テーブル名1 INNER JOIN テーブル名2 ON 結合条件；
+```
 
