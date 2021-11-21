@@ -5,7 +5,7 @@
   - システムスペックを実装
 
 - vue.js
-  - ページング(フロントエンド)
+  - ユーザー一覧(バックエンド)
   
 - react
 React Hooksを学ぶ
@@ -15,7 +15,7 @@ React Hooksを学ぶ
 
 
 > paiza
-- ruby メソッドを作ろう (3:14)
+- ruby 02:メソッドを作ろう
 - ruby スキルチェック
 - python スキルチェック
 - python ドット絵を表示する
