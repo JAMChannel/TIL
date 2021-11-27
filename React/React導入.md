@@ -1,6 +1,6 @@
 rails _6.0.0_ new  -d mysql
 
-React導入
+## React導入①
 ```
 rails webpacker:install:react
 rails g react:install
@@ -12,10 +12,20 @@ styled-components：CSS in JS のライブラリ
 react-icons：Font Awesomeなどのアイコンが簡単に利用できるライブラリ
 react-toastify フラッシュメッセージを実装できる
 ```
+```
+gem 'react-rails'
+```
+
 挙動確認
 ```
 ```
-<%= javascript_pack_tag 'application' %>
+
+## React導入②
+```
+yarn create react-app react-portfolio-yarn --use-npm
+npm start
+```
+
 
 
 

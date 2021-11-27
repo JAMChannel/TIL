@@ -275,3 +275,14 @@ mysql> SELECT * FROM members INNER JOIN jobs ON jobs.id = job_id;
 Member.joins("INNER JOIN jobs ON jobs.id = job_id")
 ```
 
+ ## LINE 練習
+
+- SQL
+```
+SELECT name, selling_price FROM Products WHERE name LIKE '%シャツ';
+```
+
+- クエリインターフェース
+```
+Product.where('name like ?','%シャツ%').select(:name)
+```
