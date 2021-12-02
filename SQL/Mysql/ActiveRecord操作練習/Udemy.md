@@ -286,3 +286,17 @@ SELECT name, selling_price FROM Products WHERE name LIKE '%シャツ';
 ```
 Product.where('name like ?','%シャツ%').select(:name)
 ```
+
+# BETWEEN練習
+- SQL
+
+Productsテーブルから、原価が450円より低く、100円より高い商品の名前と原価を取得してみよう！
+```
+SELECT name, cost_price FROM Products WHERE cost_price < 450 AND cost_price > 100;
+```
+- クエリインターフェース
+```
+Product.where(cost_price:(100)..(450)).select(:name,:cost_price)
+```
+
+
