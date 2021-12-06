@@ -299,4 +299,14 @@ SELECT name, cost_price FROM Products WHERE cost_price < 450 AND cost_price > 10
 Product.where(cost_price:(100)..(450)).select(:name,:cost_price)
 ```
 
+# IN練習
+- SQL
+Productsテーブルから、販売価格が100円、500円、1500円以外の商品の、名前と原価率を取得
+
+```
+SELECT name ,cost_price/selling_price FROM products WHERE sellce NOT IN (100, 500, 1500);
+```
+
+- クエリインターフェース
+
 

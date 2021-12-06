@@ -12,9 +12,22 @@ styled-components：CSS in JS のライブラリ
 react-icons：Font Awesomeなどのアイコンが簡単に利用できるライブラリ
 react-toastify フラッシュメッセージを実装できる
 ```
+
+#### gemの場合
 ```
 gem 'react-rails'
+rails g react:install
 ```
+
+```
+// 次のフォルダが作成される
+app/javascript/components
+// 次のファイルが編集される
+app/javascript/packs/application.js
+// 次のファイルが作成される
+app/javascript/packs/server_rendering.js
+```
+
 
 挙動確認
 ```
@@ -26,7 +39,15 @@ yarn create react-app react-portfolio-yarn --use-npm
 npm start
 ```
 
+####  git cloneの場合
+```
+npm install -g npm-check-updates
+```
 
+```
+npm install
+npm start
+```
 
 
 
