@@ -1,4 +1,5 @@
 rails _6.0.0_ new  -d mysql
+rails _6.0.0_ new アプリ名 -d mysql --skip-coffee --skip-turbolinks --webpack=react
 
 ## React導入①
 ```
@@ -35,7 +36,7 @@ app/javascript/packs/server_rendering.js
 
 ## React導入②
 ```
-yarn create react-app react-portfolio-yarn --use-npm
+npx create-react-app アプリケーション名
 npm start
 ```
 
