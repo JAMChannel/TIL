@@ -6,7 +6,7 @@
   - マンダラートページの実装（モデル作成、見た目はファーストインパクトを大切に！！）
   -　このページはReactではなくhtmlでやろうかな！！
 
-![](https://gyazo.com/258997d060ea95ea1a8a890b9e5173c1390ccc051a7eb9fad70347fc8e826a43
+![](https://gyazo.com/390ccc051a7eb9fad70347fc8e826a43/raw)
 
 
 
