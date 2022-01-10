@@ -39,6 +39,10 @@ app/javascript/packs/server_rendering.js
 npx create-react-app アプリケーション名
 npm start
 ```
+## TypeScriptの場合
+```
+npx create-react-app アプリケーション名 --template typescript --use-npm
+```
 
 ####  git cloneの場合
 ```
