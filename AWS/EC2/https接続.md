@@ -19,3 +19,26 @@ $ sudo yum-config-manager --enable epel*
 $ sudo yum install -y certbot python2-certbot-nginx
 $ sudo certbot --nginx
 ```
+
+
+### 再起動
+```
+sudo systemctl restart nginx
+```
+
+### cronを設定する
+```
+sudo crontab -u root -e
+
+00 01 01 * * root  certbot renew --force-renew --post-hook "sudo systemctl restart nginx"
+```
+
+### config/environments/production.rbの50行目付近、
+```
+config.force_ssl=true
+```
+
+### 確認
+```
+ sudo crontab -u root -l
+```
