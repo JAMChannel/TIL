@@ -3,6 +3,12 @@ file作成
 touch {Dockerfile,docker-compose.yml,Gemfile,Gemfile.lock}
 ```
 
+Gemfile
+```
+source 'https://rubygems.org'
+gem 'rails', '~> 6.0.0'
+```
+
 ## Dockerfile
 ```
 FROM ruby:3.0.2
