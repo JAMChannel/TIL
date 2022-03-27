@@ -3,8 +3,11 @@
 
 > paiza
 - 練習問題一個(Rubyスキルチェック c or b) 
-- Go練習
 - Ruby
+- 新データベース
+
+> Udemy
+- Go
 
 > SQL
 - sqlzoo
