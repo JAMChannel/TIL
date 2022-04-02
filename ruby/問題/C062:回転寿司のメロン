@@ -1,0 +1,22 @@
+```
+number = gets.to_i
+
+items = []
+number.times do |num|
+  items << gets.chomp.to_s
+end
+
+# p items
+
+melon = 0
+count = 0
+items.each.with_index(1) do |item, index|
+  if item == "melon" && melon == 0
+    count = index + 10
+    melon = melon + 1
+  elsif item == "melon" && index > count
+    count = index + 10
+    melon = melon + 1
+  end
+end
+```

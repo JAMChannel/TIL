@@ -56,16 +56,16 @@ volumes:
 
 
 ```
+## Railsイメージのビルド実行コマンド
+```
+$ docker-compose build
+```
 
 ## rails newを実装
 ```
 $ docker-compose run web rails new . --force --database=mysql
 ```
 
-## Railsイメージのビルド実行コマンド
-```
-$ docker-compose build
-```
 
 ## コンテナをデタッチドモード（バックグラウンド）で実行するコマンド
 ```

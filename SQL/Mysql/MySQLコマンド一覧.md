@@ -27,3 +27,5 @@ SHOW TABLES;
  ```
  DESC カラム名;
  ```
+
+ ps aux
